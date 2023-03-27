@@ -2,13 +2,19 @@
   <header class="flex bg-blue-800">
     <nav class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div>
-        <ul class="relative flex flex-row h-16 items-center justify-between">
+        <ul
+          class="relative flex flex-row h-16 items-center gap-4 justify-between"
+        >
           <li
             v-for="(item, index) in navigation"
             :key="index"
             :class="{ current: item.current }"
           >
-            <button class="rounded px-2 pl-4 ml-4 items-center bg-white"><a href="">{{ item.name }}</a></button>
+            <button
+              class="rounded-full content-center px-8 py-2 ml-4 items-center bg-white"
+            >
+              <a href="">{{ item.name }}</a>
+            </button>
           </li>
         </ul>
       </div>
