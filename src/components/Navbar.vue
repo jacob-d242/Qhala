@@ -1,38 +1,93 @@
 <template>
-  <header class="flex bg-blue-800">
-    <nav class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-      <div>
-        <ul
-          class="relative flex flex-row h-16 items-center gap-4 justify-between"
+  <div class=" z-20 bg-green-700">
+    <nav
+      class="relative flex flex-wrap items-center justify-between bg-transparent"
+    >
+      <div
+        class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+      >
+        <div
+          class="w-full relative flex items-center justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start"
         >
-          <li
-            v-for="(item, index) in navigation"
-            :key="index"
-            :class="{ current: item.current }"
+          <div
+            class="flex items-center justify-center px-2 py-1 sm:px-4 sm:py-2"
           >
-            <button
-              class="rounded-full content-center px-8 py-2 ml-4 items-center bg-white"
-            >
-              <a href="">{{ item.name }}</a>
-            </button>
-          </li>
-        </ul>
+            <img
+              class="h-12 sm:h-16 md:h-20 lg:h-24 max-w-full"
+              src=""
+              alt="Qhala"
+            />
+          </div>
+          <div
+            class="cursor-pointer text-xl leading-none px-3 py-1 color block lg:hidden outline-none focus:outline-none"
+            @click="toggleNavbar()"
+          >
+            <Icon icon="uil:bars" class="stroke-purple-500 h-8" />
+          </div>
+        </div>
+        <div
+          v-bind:class="{ hidden: !showMenu, flex: showMenu }"
+          class="lg:flex lg:flex-grow items-center content-between space-x-4"
+        >
+          <ul
+            class="flex flex-col lg:flex-row list-none ml-auto gap-3 justify-evenly"
+          >
+          <li class="nav-item">
+              <RouterLink
+                to="/"
+                class="rounded-full border-1  px-3 py-1 flex items-center text-xl focus:outline-none focus:ring uppercase font-bold leading-snug text-white hover:opacity-75"
+              >
+                Home</RouterLink
+              >
+            </li>
+            <li class="nav-item">
+              <RouterLink
+                to="/"
+                class="rounded-full border-1  px-3 py-1 flex items-center text-xl focus:outline-none focus:ring uppercase font-bold leading-snug text-white hover:opacity-75"
+              >
+                WorkOut</RouterLink
+              >
+            </li>
+            <li class="nav-item">
+              <RouterLink
+                to="/team"
+                class="rounded-full border-1  px-3 py-1 flex items-center text-xl uppercase font-bold leading-snug text-white hover:opacity-75"
+              >
+                Tasks</RouterLink
+              >
+            </li>
+            <li class="nav-item">
+              <RouterLink
+                to="/product"
+                class="rounded-full border-1  px-3 py-1 flex items-center text-xl uppercase font-bold leading-snug text-white hover:opacity-75"
+              >
+                Recipes</RouterLink
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
-  </header>
+  </div>
 </template>
-
 <script>
+import { Icon } from "@iconify/vue";
+
 export default {
   data() {
     return {
-      navigation: [
-        { name: "Dashboard", href: "#", current: true },
-        { name: "Team", href: "#", current: false },
-        { name: "Projects", href: "#", current: false },
-        { name: "Calendar", href: "#", current: false },
-      ],
+      showMenu: false,
     };
+  },
+  methods: {
+    toggleNavbar: function () {
+      this.showMenu = !this.showMenu;
+    },
+  },
+  components: {
+    Icon,
   },
 };
 </script>
+
+<style scoped></style>
