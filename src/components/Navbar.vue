@@ -1,5 +1,5 @@
 <template>
-  <div class=" z-20 bg-green-700">
+  <div class="fixed inset-x-0 z-20">
     <nav
       class="relative flex flex-wrap items-center justify-between bg-transparent"
     >
@@ -14,7 +14,7 @@
           >
             <img
               class="h-12 sm:h-16 md:h-20 lg:h-24 max-w-full"
-              src=""
+              src="https://qhala.com/wp-content/uploads/2021/07/qhala-logo-light.png"
               alt="Qhala"
             />
           </div>
@@ -32,36 +32,28 @@
           <ul
             class="flex flex-col lg:flex-row list-none ml-auto gap-3 justify-evenly"
           >
-          <li class="nav-item">
+            <li class="nav-item">
               <RouterLink
                 to="/"
-                class="rounded-full border-1  px-3 py-1 flex items-center text-xl focus:outline-none focus:ring uppercase font-bold leading-snug text-white hover:opacity-75"
+                class="rounded-full border-1 bg-purple-600 px-3 py-1 flex items-center text-xl focus:outline-none focus:ring uppercase font-bold leading-snug text-white hover:opacity-75"
               >
                 Home</RouterLink
               >
             </li>
             <li class="nav-item">
               <RouterLink
-                to="/"
-                class="rounded-full border-1  px-3 py-1 flex items-center text-xl focus:outline-none focus:ring uppercase font-bold leading-snug text-white hover:opacity-75"
-              >
-                WorkOut</RouterLink
-              >
-            </li>
-            <li class="nav-item">
-              <RouterLink
                 to="/team"
-                class="rounded-full border-1  px-3 py-1 flex items-center text-xl uppercase font-bold leading-snug text-white hover:opacity-75"
+                class="rounded-full border-1 bg-purple-600 px-3 py-1 flex items-center text-xl uppercase font-bold leading-snug text-white hover:opacity-75"
               >
-                Tasks</RouterLink
+                Team</RouterLink
               >
             </li>
             <li class="nav-item">
               <RouterLink
                 to="/product"
-                class="rounded-full border-1  px-3 py-1 flex items-center text-xl uppercase font-bold leading-snug text-white hover:opacity-75"
+                class="rounded-full border-1 bg-purple-600 px-3 py-1 flex items-center text-xl uppercase font-bold leading-snug text-white hover:opacity-75"
               >
-                Recipes</RouterLink
+                Product</RouterLink
               >
             </li>
           </ul>

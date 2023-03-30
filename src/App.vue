@@ -1,20 +1,12 @@
 <template>
   <div>
-    <Navbar />
-    <router-view />
-    <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+    <Navbar/>
+
+    <RouterView />
   </div>
 </template>
 
-<script>
+<script setup>
 import Navbar from "./components/Navbar.vue";
-
-export default {
-  components: {
-    Navbar,
-  },
-  setup() {},
-};
+import { RouterView } from "vue-router";
 </script>
